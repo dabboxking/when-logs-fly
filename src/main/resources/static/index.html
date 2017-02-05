@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="flylogs">
+<head>
+<title>Hello AngularJS</title>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="/webjars/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none !important;
+}
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Log Management</h1>
+		<div ng-controller="home" ng-cloak class="ng-cloak">
+			<form class="form-inline">
+				<div class="form-group">
+					<label class="sr-only" for="package">Package
+						address</label> <input type="text" ng-model="selectedLogger" class="form-control"
+						id="package" placeholder="com.your.domain">
+				</div>
+				<div class="form-group">
+					<select class="form-control" ng-model="selectedLevel" ng-options="level for level in logLevels">
+					<option value="">-- choose level ---</option>
+					</select>
+				</div>
+				<button ng-click="setLoggers()" class="btn btn-default">Set Log Level</button>
+			</form>
+
+		</div>
+	</div>
+	<script src="/webjars/angularjs/1.6.1/angular.js"
+		type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+</body>
+</html>
